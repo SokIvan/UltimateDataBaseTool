@@ -37,7 +37,7 @@ function showUserInfo() {
 
 // Отправка данных в бота
 function sendData(action) {
-    tg.sendData(JSON.stringify({
+    Telegram.WebApp.sendData(JSON.stringify({
         action: action,
         timestamp: new Date().toISOString(),
         user_id: tg.initDataUnsafe.user?.id
@@ -122,4 +122,5 @@ document.getElementById('btnProducts').addEventListener('click', () => {
 // Запускаем приложение когда всё загружено
 
 document.addEventListener('DOMContentLoaded', initApp);
+
 
