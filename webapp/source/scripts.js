@@ -115,13 +115,6 @@ document.getElementById('btnRandom').addEventListener('click', () => {
 });
 
 document.getElementById('btnProducts').addEventListener('click', () => {
-        let data = {
-            title: "title",
-            desc: "desc",    
-            text: "text"
-        }
-
-        tg.sendData(JSON.stringify(data));
 
     sendDataToBot('show_products');
     showResult('🛒 Запрос товаров отправлен');
@@ -129,3 +122,4 @@ document.getElementById('btnProducts').addEventListener('click', () => {
 // Запускаем приложение когда всё загружено
 
 document.addEventListener('DOMContentLoaded', initApp);
+
