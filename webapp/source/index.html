@@ -32,6 +32,21 @@
                     <button id="btnRandom" class="btn accent">
                         🎯 Случайное число
                     </button>
+                    <button onclick="testTelegram()">Тест Telegram API</button>
+
+<script>
+function testTelegram() {
+    console.log('Telegram:', window.Telegram);
+    console.log('WebApp:', window.Telegram?.WebApp);
+    console.log('sendData:', typeof window.Telegram?.WebApp?.sendData);
+    
+    if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.sendData) {
+        alert('Telegram WebApp доступен!');
+    } else {
+        alert('Telegram WebApp НЕ доступен!');
+    }
+}
+</script>
                 </div>
 
             <div class="card">
@@ -47,4 +62,5 @@
 
     <script src="scripts.js"></script>
 </body>
+
 </html>
