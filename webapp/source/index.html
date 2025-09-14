@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Telegram Бот</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- ОБЯЗАТЕЛЬНО подключаем Telegram Web App SDK -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Мой Бот</h1>
+            <p>Добро пожаловать в веб-приложение!</p>
+        </header>
+
+        <main>
+            <div class="card">
+                <h2>📊 Профиль</h2>
+                <div id="user-info">Загрузка...</div>
+            </div>
+
+                <div class="card">
+                    <h2>🎮 Действия</h2>
+                    <button id="btnGame" class="btn primary">
+                        🎲 Начать игру
+                    </button>
+                    <button id="btnProducts" class="btn secondary">
+                        🛒 Показать товары
+                    </button>
+                    <button id="btnRandom" class="btn accent">
+                        🎯 Случайное число
+                    </button>
+                </div>
+
+            <div class="card">
+                <h2>📝 Результат</h2>
+                <div id="result">Здесь будут результаты...</div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Создано с ❤️ для Telegram</p>
+        </footer>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
