@@ -37,7 +37,7 @@ function showUserInfo() {
 
 // Отправка данных в бота
 function sendData(action) {
-    Telegram.WebApp.sendData(JSON.stringify({
+    tg.sendData(JSON.stringify({
         action: action,
         timestamp: new Date().toISOString(),
         user_id: tg.initDataUnsafe.user?.id
