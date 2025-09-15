@@ -3,5 +3,4 @@ uvicorn
 jinja2
 python-dotenv
 aiogram
-python-dotenv
 aiohttp
