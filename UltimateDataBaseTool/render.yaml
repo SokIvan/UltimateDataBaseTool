@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: ultimate-bot
+    env: python
+    plan: free
+    repo: https://github.com/SokIvan/UltimateDataBaseTool
+    rootDir: .  # ← Корень репозитория
+    buildCommand: pip install -r bot/requirements.txt  # ← Указываем путь к requirements
+    startCommand: python bot/main.py  # ← Указываем путь к main.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+
+  - type: web
+    name: ultimate-web
+    env: python
+    plan: free
+    repo: https://github.com/SokIvan/UltimateDataBaseTool
+    rootDir: .  # ← Корень репозитория
+    buildCommand: pip install -r web/requirements.txt  # ← Указываем путь к requirements
+    startCommand: python web/main.py  # ← Указываем путь к main.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: PORT
+        value: 8000
