@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang = "ru">
+<head>
+    <title>Telegram Web App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 Связь Telegram ↔️ Веб</h1>
+        
+        <div class="card">
+            <h2>👤 Ваш Telegram ID</h2>
+            <button onclick="showTelegramId()">Показать мой Telegram ID</button>
+            <div id="telegramIdResult"></div>
+        </div>
+
+        <div class="card">
+            <h2>✉️ Отправить сообщение</h2>
+            <form onsubmit="sendMessage(event)">
+                <input type="number" id="chatId" placeholder="Ваш Telegram ID" required>
+                <button type="submit">Написать "Привет" в боте</button>
+            </form>
+            <div id="messageResult"></div>
+        </div>
+
+        <div class="card">
+            <h2>📊 Статистика</h2>
+            <p>Это веб-приложение связано с вашим Telegram ботом!</p>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

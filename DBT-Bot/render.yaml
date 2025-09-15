@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: dbt-bot-telegram
+    env: python
+    plan: free
+    repo: https://github.com/SokIvan/UltimateDataBaseTool  # Ваш репозиторий
+    rootDir: bot  # ← Критически важно!
+    buildCommand: pip install -r requirements.txt  # Из папки bot
+    startCommand: python main.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+
+  - type: web
+    name: dbt-bot-web
+    env: python
+    plan: free
+    repo: https://github.com/SokIvan/UltimateDataBaseTool  # Тот же репозиторий
+    rootDir: web  # ← Критически важно!
+    buildCommand: pip install -r requirements.txt  # Из папки web
+    startCommand: python main.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: PORT
+        value: 8000
+
+# База данных (если будете использовать)
+databases:
+  - name: Database
+    plan: free
+    databaseName: dbtbotdb
+    user: dbtbotuser
