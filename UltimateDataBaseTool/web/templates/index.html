@@ -1,7 +1,13 @@
 <!DOCTYPE html>
-<html lang = "ru">
+<html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Telegram Web App</title>
+    
+    <!-- ПОДКЛЮЧАЕМ Telegram Web App SDK -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
@@ -9,23 +15,24 @@
         <h1>🔗 Связь Telegram ↔️ Веб</h1>
         
         <div class="card">
-            <h2>👤 Ваш Telegram ID</h2>
+            <h2>👤 Информация о пользователе</h2>
+            <div id="user-info">Загрузка...</div>
+        </div>
+
+        <div class="card">
+            <h2>⚡ Действия</h2>
             <button onclick="showTelegramId()">Показать мой Telegram ID</button>
-            <div id="telegramIdResult"></div>
+            <button onclick="sendTestMessage()">Отправить тестовое сообщение</button>
         </div>
 
         <div class="card">
-            <h2>✉️ Отправить сообщение</h2>
-            <form onsubmit="sendMessage(event)">
-                <input type="number" id="chatId" placeholder="Ваш Telegram ID" required>
-                <button type="submit">Написать "Привет" в боте</button>
-            </form>
-            <div id="messageResult"></div>
+            <h2>📊 Статус</h2>
+            <div id="status">Инициализация...</div>
         </div>
 
         <div class="card">
-            <h2>📊 Статистика</h2>
-            <p>Это веб-приложение связано с вашим Telegram ботом!</p>
+            <h2>📝 Результат</h2>
+            <div id="result">-</div>
         </div>
     </div>
 
