@@ -45,7 +45,10 @@ async def get_user_info(user_id: int):
 async def send_message(chat_id: int = Form(...), text: str = Form(...)):
     result = await send_telegram_message(chat_id, text)
     return {"status": "success", "result": result}
-
+@app.get("/test-telegram")
+async def test_telegram(request: Request):
+    """Страница для тестирования Telegram WebApp"""
+    return templates.TemplateResponse("test_telegram.html", {"request": request})
 if __name__ == "__main__":
     import uvicorn
     port = int(os.environ.get("PORT", 8000))
